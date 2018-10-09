@@ -37,11 +37,11 @@
 		</div>
 
 		<script src="../build/three.js"></script>
-
+		
 		<script src="js/loaders/ColladaLoader.js"></script>
 		<script src="js/WebGL.js"></script>
 		<script src="js/libs/stats.min.js"></script>
-
+		<script src="../packer/js/create-geometry.js"></script>
 		<script>
 
 			if ( WEBGL.isWebGLAvailable() === false ) {
@@ -67,23 +67,24 @@
 				scene = new THREE.Scene();
 
 				clock = new THREE.Clock();
+				var dimension = {x:1, y:1, z:1};
+				createTexturedBox (dimension, function (model){scene.add( model );} );
+				// // loading manager
 
-				// loading manager
+				// var loadingManager = new THREE.LoadingManager( function() {
 
-				var loadingManager = new THREE.LoadingManager( function() {
+				// 	scene.add( elf );
 
-					scene.add( elf );
+				// } );
 
-				} );
+				// // collada
 
-				// collada
+				// var loader = new THREE.ColladaLoader( loadingManager );
+				// loader.load( '../assets/box1/unitBox.dae', function ( collada ) {
 
-				var loader = new THREE.ColladaLoader( loadingManager );
-				loader.load( '../assets/box1/unitBox.dae', function ( collada ) {
+				// 	elf = collada.scene;
 
-					elf = collada.scene;
-
-				} );
+				// } );
 
 				//
 
