@@ -58,14 +58,14 @@
 				document.body.appendChild( container );
 
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 2000 );
-				camera.position.set( 0, 50, 250 );
+				camera.position.set( 0, 0, 5 );
 
 				scene = new THREE.Scene();
 
 				//
 
 				var loader = new THREE.TGALoader();
-				var geometry = new THREE.BoxBufferGeometry( 50, 50, 50 );
+				var geometry = new THREE.BoxBufferGeometry( 1, 1, 1 );
 
 				// add box 1 - grey8 texture
 				
@@ -78,21 +78,8 @@
 				var material1 = new THREE.MeshPhongMaterial( { color: 0xffffff, map: texture1 } );
 
 				var mesh1 = new THREE.Mesh( geometry, material1 );
-				mesh1.position.x = - 50;
 
 				scene.add( mesh1 );
-
-				// add box 2 - tga texture
-
-				var texture2 = loader.load( 'textures/crate_color8.tga' );
-				var material2 = new THREE.MeshPhongMaterial( { color: 0xffffff, map: texture2 } );
-
-				var mesh2 = new THREE.Mesh( geometry, material2 );
-				mesh2.position.x = 50;
-
-				scene.add( mesh2 );
-
-				//
 
 				var ambientLight = new THREE.AmbientLight( 0xffffff, 0.4 );
 				scene.add( ambientLight );
