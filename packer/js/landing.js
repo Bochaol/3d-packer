@@ -57,12 +57,18 @@ let boxWin = null;
 
 function addSku() {
   activeLink('add-sku');
-
+  window.removeEventListener('message', newBox);
+  window.addEventListener('message', newSku);
   skuWin = openPage('../pages/add-sku.html', 'jetpack');
 
   setTimeout(() => {
     renderSkuList();
   }, 1000);
+
+}
+
+function newSku(event) {
+  console.log('add sku - ', event.data);
 }
 
 function renderSkuList() {
@@ -82,11 +88,17 @@ function renderSkuList() {
 
 function addBox() {
   activeLink('add-box');
+  window.removeEventListener('message', newSku);
+  window.addEventListener('message', newBox);
   boxWin = openPage('../pages/add-box.html', 'jetpack');
 
   setTimeout(() => {
     renderBoxList();
   }, 1000);
+}
+
+function newBox(event) {
+  console.log('add box - ', event.data);
 }
 
 function renderBoxList() {

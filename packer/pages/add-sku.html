@@ -27,9 +27,6 @@
                 <span class="input-group-text" style="min-width: 80px">Name</span>
               </div>
               <input type="text" class="form-control" id="name" required>
-              <div class="invalid-feedback" style="width: 100%;">
-                Name is required.
-              </div>
             </div>
 
             <div class="mb-3 input-group">
@@ -37,9 +34,6 @@
                 <span class="input-group-text" style="min-width: 80px">Image</span>
               </div>
               <input type="text" class="form-control" id="image" required>
-              <div class="invalid-feedback" style="width: 100%;">
-                Image URL is required.
-              </div>
             </div>
 
             <hr class="mb-3">
@@ -53,9 +47,6 @@
                 <div class="input-group-append">
                   <span class="input-group-text">in.</span>
                 </div>
-                <div class="invalid-feedback" style="width: 100%;">
-                  Width is required.
-                </div>
               </div>
   
               <div class="col-md-4 input-group">
@@ -65,9 +56,6 @@
                 <input type="text" class="form-control" id="length" required>
                 <div class="input-group-append">
                   <span class="input-group-text">in.</span>
-                </div>
-                <div class="invalid-feedback" style="width: 100%;">
-                  Length is required.
                 </div>
               </div>
   
@@ -79,16 +67,13 @@
                 <div class="input-group-append">
                   <span class="input-group-text">in.</span>
                 </div>
-                <div class="invalid-feedback" style="width: 100%;">
-                  Height is required.
-                </div>
               </div>
             </div>
 
             <hr class="mb-3">
 
             <button class="btn btn-primary btn-lg btn-block" type="button" data-toggle="modal" data-target="#preview-sku-modal" onclick="previewSku()">Preview</button>
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Add</button>
+            <button id="add-sku" class="btn btn-primary btn-lg btn-block" type="button">Add</button>
           </form>
         </div>
       </div>

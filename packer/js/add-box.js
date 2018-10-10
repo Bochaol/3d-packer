@@ -1,18 +1,28 @@
-(function() {
-  'use strict';
+'use strict';
 
-  window.addEventListener('load', function() {
-    const forms = document.getElementsByClassName('needs-validation');
+window.addEventListener('load', function() {
+  const form = document.querySelector('form.needs-validation');
+  const button = document.getElementById('add-box');
 
-    Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
+  button.addEventListener('click', function(event) {
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    } else {
+      form.classList.add('was-validated');
+      addBox();
+    }
+  });
+});
 
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
+function previewBox() {
+  const container = document.querySelector('div#preview-box-modal div.modal-body');
+
+  container.innerHTML = null;
+
+  addItemInit({ x: 1, y: 1, z: 1}, '../assets/peter.jpg', container);
+}
+
+function addBox() {
+  window.opener.postMessage('this is new box', '*');
+}
