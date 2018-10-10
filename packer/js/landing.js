@@ -1,24 +1,28 @@
 const sku = [
   {
     name: 'Sku 1',
+    image: '',
     width: 5,
     length: 1,
     height: 5,
   },
   {
     name: 'Sku 2',
+    image: '',
     width: 5,
     length: 5,
     height: 2,
   },
   {
     name: 'Sku 3',
+    image: '',
     width: 3,
     length: 5,
     height: 5,
   },
   {
     name: 'Sku 4',
+    image: '',
     width: 11,
     length: 5,
     height: 5,
@@ -68,7 +72,8 @@ function addSku() {
 }
 
 function newSku(event) {
-  console.log('add sku - ', event.data);
+  sku.push(JSON.parse(event.data));
+  renderSkuList();
 }
 
 function renderSkuList() {
@@ -98,7 +103,8 @@ function addBox() {
 }
 
 function newBox(event) {
-  console.log('add box - ', event.data);
+  box.push(JSON.parse(event.data));
+  renderBoxList();
 }
 
 function renderBoxList() {
