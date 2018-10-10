@@ -4,7 +4,7 @@ const boxModel = "../assets/box1/unitBox.dae";
 // create a textured geometry 
 function createTexturedGeo (dimension, imgUrl) {
 
-    var geometry = new THREE.BoxBufferGeometry( dimension.x, dimension.y, dimentsion.z );
+    var geometry = new THREE.BoxBufferGeometry( dimension.x, dimension.y, dimension.z );
     
     var texture = new THREE.TextureLoader().load(imgUrl);
     texture.wrapS = THREE.RepeatWrapping;
