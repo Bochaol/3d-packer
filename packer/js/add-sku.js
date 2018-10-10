@@ -16,3 +16,9 @@
     });
   }, false);
 })();
+
+function previewSku() {
+  const container = document.querySelector('div#preview-sku-modal div.modal-body');
+
+  addItemInit({ x: 1, y: 1, z: 1}, '../assets/peter.jpg', container);
+}
