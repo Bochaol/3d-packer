@@ -16,11 +16,12 @@ window.addEventListener('load', function() {
 });
 
 function previewSku() {
+  const form = document.querySelector('form.needs-validation');
   const container = document.querySelector('div#preview-sku-modal div.modal-body');
 
   container.innerHTML = null;
 
-  addItemInit({ x: 1, y: 1, z: 1}, '../assets/peter.jpg', container);
+  addItemInit({ x: form.width.value, y: form.height.value, z: form.length.value }, '../assets/peter.jpg', container);
 }
 
 function addSku(form) {
